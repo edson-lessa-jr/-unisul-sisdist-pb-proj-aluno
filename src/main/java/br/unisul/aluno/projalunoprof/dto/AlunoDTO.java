@@ -46,4 +46,11 @@ public class AlunoDTO {
                 ", Data Nascimento=" + dataNascimento +"\n"+
                 '}';
     }
+
+    public Aluno converterParaAluno() {
+        Aluno aluno = new Aluno();
+        aluno.setNome(this.nome);
+        aluno.setDataNascimento(this.dataNascimento);
+        return aluno;
+    }
 }

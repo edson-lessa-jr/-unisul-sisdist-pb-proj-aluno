@@ -1,14 +1,19 @@
 package br.unisul.aluno.projalunoprof.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@Entity
 public class Aluno {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
+    @Column(nullable = false)
     private String nome;
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
-    private String endereco;
 
     public static final DateTimeFormatter FORMATO_DATA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
